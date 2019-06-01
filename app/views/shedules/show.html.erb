@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Semestr:</strong>
+  <%= @shedule.semestr %>
+</p>
+
+<p>
+  <strong>Study year:</strong>
+  <%= @shedule.study_year %>
+</p>
+
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <th>Day</th>
+    <th>Pair</th>
+    <th>Name</th>
+    <th>Type of lesson</th>
+    <th>Teacher</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @disciplines.each do |d| %>
+    <tr>
+      <td><%= d.day %></td>
+      <td><%= d.pair  %></td>
+      <td><%= d.name %></td>
+      <td><%= d.type_of_discipline %></td>
+      <th><%= d.lecturer %></th>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+
+
+<%= link_to 'Edit', edit_shedule_path(@shedule) %>
+<%= link_to 'New', new_discipline_path %>
+<%= link_to 'Back', shedules_path %>
